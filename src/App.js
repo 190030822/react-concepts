@@ -1,15 +1,20 @@
-import PhotoCard from "./Profile";
-import photosData from "./data";
+import posts from './data.js';
+import Comment from './Comment.js';
 
 function App() {
-  return <main className="album-container">
-    {
-      photosData.map((profile, index) => {
-        const {title, url:profieImage, thumbnailUrl} = profile;
-        return <PhotoCard key = {index} title = {title} profieImage = {profieImage} thumbnailUrl = {thumbnailUrl} />
-      })
-    } 
-  </main>
+  return (
+    <main>
+      <section className="comments">
+        {
+          posts.map((comment) => {
+            const { id, name, email, body} = comment;
+            return <Comment  key = {id} name = {name} email = {email} body = {body} />
+
+          })
+        }
+      </section>
+    </main>
+  );
 }
 
 
