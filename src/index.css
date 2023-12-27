@@ -9,3 +9,15 @@
 section {
     text-align: center;
 }
+
+.drinks-container {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin : 2rem auto;
+}
+
+.drinks-container .drink {
+    max-height: 300px;
+}
