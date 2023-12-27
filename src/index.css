@@ -1,33 +1,11 @@
-body {
-  background-color: antiquewhite;
-}
-.comments {
-    max-width: 1000px;
-    margin: 2rem auto;
-}
-
-.comments .comment {
-    padding: 1rem;
+.button {
+    padding : 1rem;
+    border: 1px solid black;
+    text-transform: capitalize;
     background-color: white;
-    border: 1px solid red;
-    
+    cursor: pointer;
 }
 
-.comments .comment .comment-header {
-    display: flex;
-    justify-content: space-between;
-    height: 40%;
-    font-weight: bold;
-}
-
-.comments .comment .comment-body {
-    height: 60%;
-} 
-
-@media screen and (min-width : 700px) {
-    .comments {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
+section {
+    text-align: center;
 }
