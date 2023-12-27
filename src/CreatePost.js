@@ -1,13 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 function CreatePost({ postData, postCreation }) {
   const [titleState, setTitleState] = useState(postData.title);
   const [subjectState, setSubjectState] = useState(postData.body);
 
-  useEffect(() => {
+  if (postData.id !== 0 &&  postData.userId === 1) {
+    // Firstly, the code i am implemeted is not the good practice and we can utilize useEffect() or another useState() but,
+    //  my "INTENTION" is to know the exact issue behind this problem if we do like this.
+    //1) My main problem is when i am updating the post this CreatePost component is rendered from the parent component(Increment file)
+    //  with new postData to fill the input fields. so i am using the if block to update field states values only one time.
     setTitleState(postData.title);
     setSubjectState(postData.body);
-  }, [postData]);
+    postData.userId = 2;  // 2) set this userId to 2 just not to re-render the if block again. 
+    // as I am setting the userID to 1 during saving the post. so no problem.
+
+    
+
+    // 3)as excepted the if bloc is executing only one time and updating the state values(I have checked it through console.log), 
+    // but they are not getting replicated in the input fields. once you check while running the code anna.
+
+    // can you help anna ?
+
+  }
+
 
   const handleFieldState = (e, fieldName) => {
     switch (fieldName) {
